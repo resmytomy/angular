@@ -3,9 +3,7 @@
   <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Data From npmrc</h3>
   <div class="card-body">
     <div id="table" class="table-editable">
-      <span class="table-add float-right mb-3 mr-2">
-        <!-- <a class="text-success" (click)="add()"> -->
-         
+      <span class="table-add float-right mb-3 mr-2">         
       </span>
       <table class="table  table-responsive-md  text-center">
         <tr>
@@ -13,37 +11,21 @@
           <th class="text-center">Value</th>
       
         </tr>
-        <tr *ngFor="let person of fileContentList let id = index">
+        <tr *ngFor="let fileContents of fileContentList let id = index">
           <td>
-            <span (blur)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            <span (blur)="updateList(id, 'name', $event)" contenteditable="true">{{fileContents.name}}</span>
           </td>
           <td>
-            <span contenteditable="true" (blur)="changeValue(id, 'value', $event)" (blur)="updateList(id, 'value', $event)">{{person.value}}</span>
+            <span contenteditable="true" (blur)="updateList(id, 'value', $event)" >{{fileContents.value}}</span>
           </td>
          
-          <!-- <td>
-            <span class="table-up">
-              <a class="indigo-text">
-                <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon>
-              </a>
-            </span>
-            <span class="table-down">
-              <a class="indigo-text">
-                <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon>
-              </a>
-            </span>
-          </td>
-          <td>
-            <span class="table-remove">
-              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
-            </span>
-          </td> -->
+      
         </tr>
       </table>
     </div>
-    <div>
-      <button type="button" mdbBtn  rounded="true" size="sm" class="my-0" color="green" (click)="updateAll()">Update</button>
-      <button type="button" mdbBtn  rounded="true" size="sm" class="my-0" color="green" (click)="add()">ADd Row</button>
+    <div class="text-center margin-top-20">
+      <button type="button" mdbBtn  rounded="true" size="sm" class="my-0" color="black" (click)="updateAll()">Update</button>
+      <button type="button" mdbBtn  rounded="true" size="sm" class="my-0" color="black" (click)="add()">ADd Row</button>
 
 
       
