@@ -19,12 +19,25 @@ var fcontent=[];
     finalcontent=finalcontent+line+'\r\n';
   });
   console.log(finalcontent)
-fs.writeFile(fileName, finalcontent, function (err) {
+  return new Promise((resolve, reject) => {
 
-   if (err) throw err;
+    fs.writeFile(fileName,finalcontent, (err, data) => {
 
- });
-return finalcontent;
+      if (err) {
+
+        reject (err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
+
+        return        // and we don't want to go any further
+
+      }
+
+      console.log(data);
+
+      resolve(finalcontent)
+
+    })
+
+  })
 }
 
 getFile (fileName) {

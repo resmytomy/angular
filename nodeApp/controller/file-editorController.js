@@ -4,8 +4,14 @@ class fileEditorController{
     const futil=new FileUtil();
 
     console.log('inside write!');
+    futil.write('npmrc',req)
 
-    res.send( futil.write('npmrc',req));
+.then(data =>res.json(data))
+
+.catch(err => res.send(err))
+
+
+    //res.send( futil.write('npmrc',req));
 }
 readFileController= (req, res) => {
     console.log('controllere')
