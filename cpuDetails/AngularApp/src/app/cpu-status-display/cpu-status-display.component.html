@@ -1,0 +1,41 @@
+<!-- 
+
+
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Cpu Information</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">         
+        </span>
+        <table class="table  table-responsive-md  text-center">
+
+          <tr *ngFor="let fileContents of cpuContentList ">
+            <td>
+              <span>{{fileContents.name}}</span>
+            </td>
+            <td>
+              <span >{{fileContents.value}}</span>
+            </td>
+           
+        
+          </tr>
+        </table>
+      </div>
+     
+    </div>
+  </div>
+  Editable table -->
+
+
+<div>
+  <h3 >Cpu Information</h3>
+  <table mdbTable mdbTableScroll scrollY="true" maxHeight="300" bordered="true">
+
+
+    <tbody>
+        <tr *ngFor="let fileContents of cpuContentList">
+           <td>{{fileContents.name}}</td>
+          <td>{{fileContents.value}}</td>
+         
+        </tr>
+      </tbody>
